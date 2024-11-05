@@ -1,0 +1,22 @@
+{% extends 'extractor/base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Extracted Text</h2>
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <h5>Original File: {{ document.file.name }}</h5>
+            <p class="text-muted">Uploaded at: {{ document.uploaded_at }}</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Extracted Text:</label>
+            <div class="border p-3 bg-light">
+                <pre>{{ extracted_text }}</pre>
+            </div>
+        </div>
+        <a href="{% url 'upload' %}" class="btn btn-primary">Upload Another File</a>
+    </div>
+</div>
+{% endblock %}
